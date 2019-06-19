@@ -1,0 +1,21 @@
+.contenido-blog {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+.contenido-blog > div {
+    margin: 0px 10px;
+    background: #eeeeee;
+    border-radius: 20px;
+    padding: 20px;
+}
+.contenido-blog li:first-child {
+    font-size: 25px;
+    margin-left: -10px;
+}
+.contenido-blog ul li:nth-child(n+2) {
+    list-style-type: disc; 
+    padding-top: 15px;
+    margin-left: 10px;
+    font-size: 18px;
+}

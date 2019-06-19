@@ -1,0 +1,10 @@
+.barra-blog {
+    width: 238px;
+    height: 99%;
+}
+.barra-blog li {
+    margin-left: 10px;
+    padding: 15px 5px;
+    max-width: 170px;
+    list-style-type: disc;
+}

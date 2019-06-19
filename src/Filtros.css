@@ -1,0 +1,32 @@
+.search {
+    width: 30px;
+    height: 30px;
+}
+.categorias {
+    background-color: #eeeeee;
+    padding-right: 0px;
+    box-shadow: 3px 5px 5px #0673FA;
+    height: 99%;
+    margin-bottom: 20px;
+    z-index: 2;
+    width: 238px;
+}
+.categorias > input {
+    width: 170px;
+    padding: 5px;
+}
+input[type=checkbox] {
+    margin: 5px;
+}
+.categorias > ul > li:first-child {
+    font: 19px bold;
+    
+}
+ul {
+    padding: 15px;
+    list-style: none;
+}
+li > ul > :first-child {
+    padding: 10px 0px;
+    font: 20px bold;
+}

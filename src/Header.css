@@ -1,0 +1,18 @@
+.logo {
+    width: 100px;
+    margin-left: 40px;
+    border-radius: 0px;
+  }
+.navbar {
+    background-color: #eeeeee;
+    box-shadow: 0px 3px 5px #0673FA;
+    z-index: 1;
+}
+.nav-item {
+    padding: 5px 20px;
+}
+.registrarse {
+    list-style: none;
+    margin: 5px;
+    padding: 5px;
+}
