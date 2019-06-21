@@ -1,36 +1,123 @@
 import React from 'react';
-import './App.css'
-import Inicio from './Inicio.js'
-import Blog from './Blog.js'
-
+import './App.css';
+import './Header.css'
+import Inicio from './Inicio.js';
+import Blog from './Blog.js';
+import NewAnimal from './NewAnimal.js';
+import FichaAnimal from './FichaAnimal.js';
+import Footer from './Footer';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      section: 1
+      section: 1,
+      Animals: [{
+        id: 1,
+        imagen: 'assets/perro1.png',
+        nombre: 'Morena',
+        especie: 'Perro',
+        sexo: 'Hembra',
+        tamaño: 'Medio',
+        edad: '1 año, 2 meses y 14 días',
+        raza: 'Mestizo',
+        barrio: 'Aguada',
+        colorOjos: 'Marrón',
+        colorPelo: 'Negro',
+        descripcion: 'Fue encontrada por la calle arenal grande esquina martin garcia, busque al posible dueño y no lo encontré al parecer era callejera, y bueno no puedo hacerme cargo por mucho tiempo mas, ya tengo otra mascota'
+      },
+      {
+        id: 2,
+        imagen: 'assets/perro2.png',
+        nombre: 'Toby',
+        especie: 'Perro',
+        sexo: 'Macho',
+        tamaño: 'Grande',
+        edad: '3 años, 5 meses y 21 días',
+        raza: 'Mestizo',
+        barrio: 'Cordon',
+        colorOjos: 'Marrón',
+        colorPelo: 'Marrón',
+        descripcion: 'Descripcion Toby'
+      },
+      {
+        id: 3,
+        imagen: 'assets/perro3.png',
+        nombre: 'Luna',
+        especie: 'Perro',
+        sexo: 'Hembra',
+        tamaño: 'Medio',
+        edad: '2 años, 1 mes y 5 días',
+        raza: 'Mestizo',
+        barrio: 'Tres Cruces',
+        colorOjos: 'Negro',
+        colorPelo: 'Marrón',
+        descripcion: 'Descripcion Luna'
+      },
+      {
+        id: 4,
+        imagen: 'assets/perro4.png',
+        nombre: 'Rocco',
+        especie: 'Perro',
+        sexo: 'Macho',
+        tamaño: 'Pequeño',
+        edad: '5 meses y 23 días',
+        raza: 'Mestizo',
+        barrio: 'Union',
+        colorOjos: 'Marrón',
+        colorPelo: 'Negro',
+        descripcion: 'Descripcion Rocco'
+      },
+      {
+        id: 5,
+        imagen: 'assets/perro5.png',
+        nombre: 'Lola',
+        especie: 'Perro',
+        sexo: 'Hembra',
+        tamaño: 'Medio',
+        edad: '1 año, 9 meses y 28 días',
+        raza: 'Mestizo',
+        barrio: 'Reducto',
+        colorOjos: 'Marrón',
+        colorPelo: 'Marrón',
+        descripcion: 'Descripcion Lola'
+      },
+      {
+        id: 6,
+        imagen: 'assets/perro6.png',
+        nombre: 'Otto',
+        especie: 'Perro',
+        sexo: 'Macho',
+        tamaño: 'Pequeño',
+        edad: '3 años, 11 meses y 17 días',
+        raza: 'SuperCan',
+        barrio: 'Carrasco',
+        colorOjos: 'Negro',
+        colorPelo: 'Blanco',
+        descripcion: 'Descripcion Otto'
+      }]
     };
   }
-
-  goToHome = () => {
+  
+  goToInicio = () => {
     this.setState({
       section: 1
     });
   }
 
-  goToProducts = () => {
+  goToBlog = () => {
     this.setState({
       section: 2
     });
   }
 
-  goToContactUs = () => {
+  goToNewAnimal = () => {
     this.setState({
       section: 3
     });
   }
 
-  goToContactUs = () => {
+  Morena = () => {
     this.setState({
       section: 4
     });
@@ -38,164 +125,70 @@ class App extends React.Component {
 
   currentSection() {
     if (this.state.section === 1) {
-      return <Home />;
+      return <Inicio animals={this.state.Animals} />;
     }
 
     if (this.state.section === 2) {
-      return <Products />;
+      return <Blog />;
     }
 
     if (this.state.section === 3) {
-      return <ContactUs />;
+      return <NewAnimal />;
     }
 
-    if (this.state.section === 4) {
-      return <ContactUs />;
-    }
+  if (this.state.section === 4) {
+    return <FichaAnimal />;
   }
+}
 
   render() {
     return (
-      <div>
-      
-        <Inicio />
-        
-        <nav>
-          <ul className="nav">
-            <li className="nav-item">
-              <a className="nav-link" href="#home" onClick={this.goToHome}>Home</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#products" onClick={this.goToProducts}>Products</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#contactus" onClick={this.goToContactUs}>Contact Us</a>
-            </li>
-          </ul>
-          <div className="progress">
-            <div className="progress-bar" role="progressbar" style={{ width: this.state.section * 33 + '%' }} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </nav>
+      <div className="App">
+          
+        <header className="App-header">
+                <nav className="navbar navbar-expand-md navbar-light">
+                    <a className="navbar-brand" href="list.html"><img src="assets/LOGO.png" alt="Pets-Rescue" className="logo"></img></a>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav ml-auto mr-auto">
+                            <li className="nav-item">
+                                <a href="#Inicio" onClick={this.goToInicio}>Inicio</a>
+                            </li>
+                            <li>
+                                <h5>.</h5>
+                            </li>
+                            <li className="nav-item">
+                                <a href="#NewAnimal" onClick={this.goToNewAnimal}>¡Quiero dar en adopción!</a>
+                            </li>
+                            <li>
+                                <h5>.</h5>
+                            </li>
+                            <li className="nav-item">
+                                <a href="#Blog" onClick={this.goToBlog}>Blog</a>
+                            </li>
+                            <li className="nav-item">
+                                <a href="#Morena" onClick={this.Morena}>FichaDelAnimal</a>
+                            </li>
+                        </ul>
+                        <ul className="nav-item registrarse">
+                            <li><a href="???">Iniciar seción</a></li>
+                            <li> o <a href="???">Registrarse</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
 
         {this.currentSection()}
+        
+      <Footer />
 
-      </div >
-    );
-  }
-}
-
-class Home extends React.Component {
-  render() {
-    return (
-      <section>
-        <h4>Home</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum magna id libero ultricies, a dictum nunc venenatis. Cras lacinia at erat nec dictum. Aliquam varius arcu in felis tempor rhoncus. Vivamus sed nisl dolor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed et augue eget odio imperdiet bibendum eleifend lobortis nulla. Suspendisse viverra dolor sed massa fringilla accumsan. Nam sit amet ex sit amet sapien pharetra euismod fermentum eget enim.</p>
-      </section>
-    );
-  }
-}
-
-class ContactUs extends React.Component {
-  render() {
-    return (
-      <section>
-        <div className="input-group mb-3">
-          <div className="input-group-prepend">
-            <span className="input-group-text" id="basic-addon1">@</span>
-          </div>
-          <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
-        </div>
-        <div className="input-group mb-3">
-          <input type="text" className="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-          <div className="input-group-append">
-            <span className="input-group-text" id="basic-addon2">@example.com</span>
-          </div>
-        </div>
-        <div className="form-group">
-          <label htmlFor="exampleFormControlTextarea1">Example textarea</label>
-          <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-      </section>
-    );
-  }
-}
-
-class Products extends React.Component {
-  constructor(props) {
-    super(props);
-    this.products = [
-      {
-        id: 1,
-        name: 'Car',
-        description: 'This is the awesome red car you always wanted to buy.'
-      },
-      {
-        id: 2,
-        name: 'House',
-        description: 'Buy this house now and you will get 50% off.'
-      },
-      {
-        id: 3,
-        name: 'Pencil',
-        description: 'You can also buy the pack of 10 colors for the price of 5.'
-      },
-      {
-        id: 4,
-        name: 'Camera',
-        description: 'This brand new 50MP camera with x30 zoom is awesome!'
-      },
-      {
-        id: 5,
-        name: 'Mobile Phone',
-        description: 'Now you can receive messages from far away!'
-      },
-      {
-        id: 6,
-        name: 'Torch',
-        description: 'Now you can see at night. Warning do not use indoors!'
-      },
-      {
-        id: 7,
-        name: 'Coke',
-        description: 'My coke'
-      }
-    ];
-  }
-
-  render() {
-    return (
-      <section className="products">
-        {this.products.map(product => <Product product={product} key={product.id} />)}
-      </section>
-    );
-  }
-}
-
-class Product extends React.Component {
-  render() {
-    return (
-      <div className="card">
-        <img className="card-img-top" width={100} height={180} src="assets/perro1.png" alt="Foto Animal" />
-        <div className="card-body">
-          <ProductData product={this.props.product} />
-          <a href="#." className="btn btn-primary">Buy</a>
-        </div>
       </div>
     );
   }
 }
-
-class ProductData extends React.Component {
-  render() {
-    return (
-      <React.Fragment>
-        <h5 className="card-title">{this.props.product.name}</h5>
-        <p className="card-text">{this.props.product.description}</p>
-      </React.Fragment>
-    );
-  }
-}
-
 
 export default App;
 

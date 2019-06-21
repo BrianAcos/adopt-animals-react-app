@@ -1,16 +1,10 @@
 import React from 'react';
-import Header from './Header.js'
-import Footer from './Footer.js';
 import FiltrosBlog from './FiltrosBlog.js';
-import ContenidoBlog from './ContenidoBlog.js'
+import ContenidoBlog from './ContenidoBlog.js';
 
 class Blog extends React.Component {
     render () {
         return (
-
-            <body>
-        
-        <Header />
 
         <div className="container-fluid">
           <div className="row background">
@@ -22,9 +16,6 @@ class Blog extends React.Component {
           </div >
         </div >
 
-        <Footer />
-
-      </body>
         );
     }
 }

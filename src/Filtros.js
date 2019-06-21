@@ -10,7 +10,7 @@ class Filtros extends React.Component {
         <form className="busqueda">
           <input type="search" placeholder="¿Que buscas?"></input>
           <button className="search">
-            <h6>&#128270;</h6>
+            <h6>&#x1F50D;</h6>
           </button>
         </form>
         <ul>
