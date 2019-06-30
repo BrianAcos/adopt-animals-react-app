@@ -1,5 +1,5 @@
 .search {
-    width: 30px;
+    width: 0px;
     height: 30px;
 }
 .categorias {
@@ -29,4 +29,13 @@ ul {
 li > ul > :first-child {
     padding: 10px 0px;
     font: 20px bold;
+}
+.busqueda input {
+    width: 150px;
+}
+.search {
+    width: 30px;
+}
+.search img {
+    width: 20px;
 }

@@ -6,12 +6,17 @@ import Blog from './Blog.js';
 import NewAnimal from './NewAnimal.js';
 import FichaAnimal from './FichaAnimal.js';
 import Footer from './Footer';
+import Favoritos from './Favoritos';
+import Politica from './Politica';
+import Contactenos from './Contactenos';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       section: 1,
+      favoritos: ['no hay animales'],
+      currentAnimal: null,
       Animals: [{
         id: 1,
         imagen: 'assets/perro1.png',
@@ -97,6 +102,8 @@ class App extends React.Component {
         descripcion: 'Descripcion Otto'
       }]
     };
+
+    this.handleAñadirAnimal = this.handleAñadirAnimal.bind(this);
   }
   
   goToInicio = () => {
@@ -117,28 +124,78 @@ class App extends React.Component {
     });
   }
 
-  Morena = () => {
+  goToFicha = (animal) => {
     this.setState({
-      section: 4
+      section: 4,
+      currentAnimal: animal
+    });
+  }
+
+  goToFavoritos = () => {
+    this.setState({
+      section: 5,
+    });
+  }
+
+  goToContactenos = () => {
+    this.setState({
+      section: 6
+    });
+  }
+
+  goToPolitica = () => {
+    this.setState({
+      section: 7
     });
   }
 
   currentSection() {
-    if (this.state.section === 1) {
-      return <Inicio animals={this.state.Animals} />;
+  if (this.state.section === 1) {
+      return <Inicio goToFicha={this.goToFicha} animals={this.state.Animals} />;
     }
 
-    if (this.state.section === 2) {
+  if (this.state.section === 2) {
       return <Blog />;
     }
 
-    if (this.state.section === 3) {
-      return <NewAnimal />;
+  if (this.state.section === 3) {
+      return <NewAnimal onAddAnimal={this.handleAñadirAnimal} />;
     }
 
   if (this.state.section === 4) {
-    return <FichaAnimal />;
+    return <FichaAnimal goToFavoritos={this.goToFavoritos} animal={this.state.currentAnimal}/>;
   }
+
+  if (this.state.section === 5) {
+    return <Favoritos favoritos={this.state.favoritos}/>;
+  }
+
+  if (this.state.section === 6) {
+    return <Contactenos />;
+  }
+
+  if (this.state.section === 7) {
+    return <Politica />;
+  }
+
+} 
+
+addToWishlist = (animal) => {
+  if (this.statefavoritos.indexOf(animal) === -1) { //este IF evita que el mismo animal se cawrgue mas de una vez al hacer click
+    this.state.favoritos.push(animal)
+  }
+}
+
+removeToWishlist = (animal) => {
+  var i = this.state.favoritos.indexOf(animal);
+  this.state.favoritos.splice(i, 1);
+  this.goToFavoritos();
+}
+
+handleAñadirAnimal (nuevo) {
+  this.setState({
+    Animals: [...this.state.Animals, nuevo]
+  })
 }
 
   render() {
@@ -169,13 +226,12 @@ class App extends React.Component {
                             <li className="nav-item">
                                 <a href="#Blog" onClick={this.goToBlog}>Blog</a>
                             </li>
-                            <li className="nav-item">
-                                <a href="#Morena" onClick={this.Morena}>FichaDelAnimal</a>
+                            <li>
+                                <h5>.</h5>
                             </li>
-                        </ul>
-                        <ul className="nav-item registrarse">
-                            <li><a href="???">Iniciar seción</a></li>
-                            <li> o <a href="???">Registrarse</a></li>
+                            <li className="nav-item">
+                                <a href="#goToFicha" onClick={this.goToFavoritos}>Favoritos</a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -183,7 +239,7 @@ class App extends React.Component {
 
         {this.currentSection()}
         
-      <Footer />
+      <Footer goToContactenos={this.goToContactenos} goToPolitica={this.goToPolitica} />
 
       </div>
     );

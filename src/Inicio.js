@@ -12,7 +12,7 @@ class Inicio extends React.Component {
 
             <Filtros />
 
-            <ListaAnimal animals={this.props.animals} />
+            <ListaAnimal goToFicha={this.props.goToFicha} animals={this.props.animals} />
 
           </div >
         </div >

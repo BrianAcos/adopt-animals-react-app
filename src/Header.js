@@ -30,10 +30,6 @@ class Header extends React.Component {
                                 <a href="blog.html">Blog</a>
                             </li>
                         </ul>
-                        <ul className="nav-item registrarse">
-                            <li><a href="???">Iniciar seción</a></li>
-                            <li> o <a href="???">Registrarse</a></li>
-                        </ul>
                     </div>
                 </nav>
             </header>

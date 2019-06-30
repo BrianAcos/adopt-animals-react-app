@@ -12,7 +12,7 @@ class ListaAnimal extends React.Component {
                 </button>
                 <div className="row">
                     
-                {this.props.animals.map(item => <AnimalCard animal={item} key={item.id} />)}
+                {this.props.animals.map(item => <AnimalCard goToFicha={this.props.goToFicha} animal={item} key={item.id} />)}
                 </div>
             </div>
 

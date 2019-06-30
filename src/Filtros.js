@@ -10,7 +10,7 @@ class Filtros extends React.Component {
         <form className="busqueda">
           <input type="search" placeholder="¿Que buscas?"></input>
           <button className="search">
-            <h6>&#x1F50D;</h6>
+            <h6><img src='/assets/lupa.png' alt="lupa"/></h6>
           </button>
         </form>
         <ul>
@@ -20,19 +20,19 @@ class Filtros extends React.Component {
               <li>Especie:</li>
               <li>
                 <input id="perros" type="checkbox"></input>
-                <label for="perros">Perros</label>
+                <label htmlFor="perros">Perros</label>
               </li>
               <li>
                 <input id="gatos" type="checkbox"></input>
-                <label for="gatos">Gatos</label>
+                <label htmlFor="gatos">Gatos</label>
               </li>
               <li>
                 <input id="aves" type="checkbox"></input>
-                <label for="aves">Aves</label>
+                <label htmlFor="aves">Aves</label>
               </li>
               <li>
                 <input id="otros" type="checkbox"></input>
-                <label for="otros">Otros</label>
+                <label htmlFor="otros">Otros</label>
               </li>
             </ul>
           </li>
@@ -41,15 +41,15 @@ class Filtros extends React.Component {
               <li>Edad:</li>
               <li>
                 <input id="cachorro" type="checkbox"></input>
-                <label for="cachorro">Cachorro (&#60;1 año)</label>
+                <label htmlFor="cachorro">Cachorro (&#60;1 año)</label>
               </li>
               <li>
                 <input id="adulto" type="checkbox"></input>
-                <label for="adulto">Adulto (1 - 6 años)</label>
+                <label htmlFor="adulto">Adulto (1 - 6 años)</label>
               </li>
               <li>
                 <input id="abuelito" type="checkbox"></input>
-                <label for="abuelito">Abuelito (&#62;6 años)</label>
+                <label htmlFor="abuelito">Abuelito (&#62;6 años)</label>
               </li>
             </ul>
           </li>
@@ -58,11 +58,11 @@ class Filtros extends React.Component {
               <li>Sexo:</li>
               <li>
                 <input id="macho" type="checkbox"></input>
-                <label for="macho">Macho</label>
+                <label htmlFor="macho">Macho</label>
               </li>
               <li>
                 <input id="hembra" type="checkbox"></input>
-                <label for="hembra">Hembra</label>
+                <label htmlFor="hembra">Hembra</label>
               </li>
             </ul>
           </li>
@@ -71,15 +71,15 @@ class Filtros extends React.Component {
               <li>Tamaño:</li>
               <li>
                 <input id="pequeño" type="checkbox"></input>
-                <label for="pequeño">Pequeño (&#60; 15Kg)</label>
+                <label htmlFor="pequeño">Pequeño (&#60; 15Kg)</label>
               </li>
               <li>
                 <input id="mediano" type="checkbox"></input>
-                <label for="mediano">Mediano (15 - 25Kg)</label>
+                <label htmlFor="mediano">Mediano (15 - 25Kg)</label>
               </li>
               <li>
                 <input id="grande" type="checkbox"></input>
-                <label for="grande">Grande (&#62; 25Kg)</label>
+                <label htmlFor="grande">Grande (&#62; 25Kg)</label>
               </li>
             </ul>
           </li>
@@ -89,16 +89,21 @@ class Filtros extends React.Component {
             </form>
           </li>
         </ul>
-        <ul>
-          <li><a href="list.html">Publicaciones recientes</a></li>
-        </ul>
-        <ul>
-          <li><a href="???">Mascotas guardadas</a></li>
-        </ul>
       </div>
     </nav>
+
+/* no me funciona
+<script>
+$(document).ready(function () {
+  $('#sidebarCollapse').on('click', function () {
+    $('#sidebar').toggleClass('ocultar');
+  });
+});  
+</script>
+*/
         );
     }
 }
+
 
 export default Filtros;
