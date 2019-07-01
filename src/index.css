@@ -1,0 +1,78 @@
+html, .navbar, a {
+  font-variant: small-caps;
+}
+
+.background {
+  background-size: 10%;
+  background-image: url(/assets/pata.png);
+}
+.contenido {
+  margin: 20px;
+  padding: 0px;
+}
+.contenido col {
+  align-items: flex-end;
+}
+button {
+padding: 5px;
+border-radius: 5px;
+background-color: #0673FA;
+color: white;
+border: 0px;
+font-size: 18px;
+font-variant: small-caps;
+transition: background-color 1.5s;
+}
+button:hover {
+background-color: green;
+transition: background-color ease-out 0.5s;
+}
+a:link{
+text-decoration: none;
+}
+h1 {
+  text-align: center;
+  font: 30px bold;
+  text-shadow: 0 0 3px blue;
+  font-variant: small-caps;
+}
+a:hover, label:hover {
+  text-shadow: 0 0 3px blue;
+}
+span {
+font: 20px bold;
+}
+.categorias label {
+margin: 0px;
+padding: 0px;
+color: #0673FA;
+}
+.busqueda {
+padding-top: 10px;
+}    
+
+@media all and (max-width: 700px) {
+.asd {
+    margin-left: -238px;
+}
+}
+@media all and (max-width: 700px) {
+#sidebar.ocultar {
+    margin-left: 0px;
+}
+}
+@media all and (min-width: 700px) {
+#sidebar.ocultar {
+    margin-left: -238px;
+}
+}   
+#sidebar {
+transition: all 1s ease-out;
+visibility: visible;
+}
+.deslizable {
+z-index: 2;
+position: fixed;
+margin-top: -20px;
+margin-left: -20px;
+}

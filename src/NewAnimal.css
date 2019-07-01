@@ -1,0 +1,29 @@
+.formulario label {
+    padding: 10px 20px;
+    text-align: right;
+    width: 210px;
+}
+.formulario form {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #0673FA;
+    padding: 20px;
+    margin: 20px;
+    background-color: #eeeeee;
+}
+.formulario h1 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.formulario select, .formulario input, .formulario textarea {
+    width: 300px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.formulario > div {
+    margin: auto;
+}
+.formulario {
+    background-color: white;
+}

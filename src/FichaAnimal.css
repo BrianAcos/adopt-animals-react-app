@@ -1,0 +1,37 @@
+.adoptar {
+    display: flex;
+    margin: 20px auto;
+    justify-content: center;
+    width: 150px;
+}
+.datos, .datos-contacto {
+    font-size: 18px;
+    background-color: #eeeeee;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px blue;
+}
+.datos-contacto {
+    margin: 20px 0px;
+}
+.contacto {
+    margin: 20px 0px;
+    width: 80px;
+}
+.contacto > a {
+    color: white;
+}
+.comentar button {
+    display: flex;
+    margin-right: auto;
+}
+.comentar input {
+    border-radius: 10px;
+    display: flex;
+    margin-left: auto;
+}
+button {
+    margin: 0px 20px;
+}
+.ajuste {
+    width: 100%;
+}

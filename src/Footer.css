@@ -1,0 +1,18 @@
+.subir {
+    display: flex;
+    justify-content: space-between;
+    background: #eeeeee;
+    align-items: center;
+    box-shadow: 0px -5px 5px #0673FA; 
+}
+.subir ul {
+    display: flex;
+    margin-top: 20px;
+}
+.subir li {
+    display: flex;
+    margin: 10px;
+}
+.subir img {
+    padding-right: 20px;
+}
